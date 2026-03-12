@@ -169,6 +169,12 @@ def change_task(storage):
         except ValueError:
             print("Invalid input. Please enter a valid task number.")
 
+# --- Utility Functions ---
+def refresh(storage):
+    clear()
+    show_tasks(storage)
+    print("-----------------------------------------------\n")
+
 # --- Main Program ---
               
 clear()
@@ -189,19 +195,13 @@ while True:
 
     if choice == "n":
         add_task(real_list_storage)
-        clear()
-        show_tasks(real_list_storage)
-        print("-----------------------------------------------\n")
+        refresh(real_list_storage)
     elif choice == "c":
         change_task(real_list_storage)
-        clear()
-        show_tasks(real_list_storage)
-        print("-----------------------------------------------\n")
+        refresh(real_list_storage)
     elif choice == "d":
         delete_task(real_list_storage)
-        clear()
-        show_tasks(real_list_storage)
-        print("-----------------------------------------------\n")
+        refresh(real_list_storage)
     elif choice == "q":
         save_tasks(real_list_storage)
         break
